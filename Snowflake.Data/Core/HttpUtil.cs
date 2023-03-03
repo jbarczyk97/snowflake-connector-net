@@ -64,7 +64,6 @@ namespace Snowflake.Data.Core
 
     public sealed class HttpUtil
     {
-
         private static readonly SFLogger logger = SFLoggerFactory.GetLogger<HttpUtil>();
 
         private static readonly HttpUtil instance = new HttpUtil();
@@ -112,7 +111,7 @@ namespace Snowflake.Data.Core
         private HttpMessageHandler setupCustomHttpHandler(HttpClientConfig config)
         {
             HttpMessageHandler httpHandler;
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) && SFEnvironment.ClientEnv.IsNetFramework)
             {
                 httpHandler = new WinHttpHandler()
                 {
