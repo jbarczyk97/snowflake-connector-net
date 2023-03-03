@@ -66,14 +66,9 @@ namespace Snowflake.Data.Core
     {
         private static readonly SFLogger logger = SFLoggerFactory.GetLogger<HttpUtil>();
 
-        private static readonly HttpUtil instance = new HttpUtil();
-
         private HttpUtil() { }
 
-        static internal HttpUtil Instance
-        {
-            get { return instance; }
-        }
+        internal static HttpUtil Instance { get; } = new HttpUtil();
 
         private readonly object httpClientProviderLock = new object();
 
