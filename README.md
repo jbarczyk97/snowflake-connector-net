@@ -9,7 +9,7 @@ The Snowflake .NET connector supports the the following .NET framework and libra
 
 - .NET Framework 4.7.2
 - .NET Framework 4.7.3
-- .NET Core 6.0
+- .NET 6.0
 
 Please refer to the Notice section below for information about safe usage of the .NET Driver
 
@@ -163,7 +163,7 @@ The following examples show how you can include different types of special chara
 
 - To include a single quote (') character:
 
-  ``` cs
+  ``` cs 
   string connectionString = String.Format(
     "account=testaccount; " +
     "user=testuser; " +
